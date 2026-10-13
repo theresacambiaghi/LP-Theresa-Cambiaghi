@@ -22,7 +22,7 @@ function doPost(e) {
           'Data e hora', 'Nome', 'WhatsApp', 'Horários', 'Frequência',
           'Preferência', 'Experiências', 'Interesse', 'Mensagem', 'Origem'
         ]);
-        sheet.getRange(1, 1, 1, 10).setFontWeight('bold').setBackground('#173f31').setFontColor('#ffffff');
+        sheet.getRange(1, 1, 1, 10).setFontWeight('bold').setBackground('#476220').setFontColor('#F0EBE5');
         sheet.setFrozenRows(1);
       }
 

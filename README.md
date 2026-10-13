@@ -20,9 +20,24 @@ Landing page temporária do novo estúdio Theresa Cambiaghi Pilates, com pesquis
 
 ## Publicar na Vercel
 
-Importe o repositório GitHub `theresacambiaghi/LP-Theresa-Cambiaghi`. A Vercel detecta este projeto sem necessidade de framework ou comando de build.
+1. No painel da Vercel, selecione **Add New → Project**.
+2. Conecte a conta ou organização do GitHub que possui o repositório, caso ela ainda não esteja conectada.
+3. Localize `theresacambiaghi/LP-Theresa-Cambiaghi` e clique em **Import**.
+4. Mantenha **Root Directory** como `./` e escolha **Framework Preset: Other**.
+5. Não informe Build Command nem Output Directory: a Vercel publica `public/` e reconhece `api/submit.js` como função serverless.
+6. Em **Environment Variables**, cadastre `SHEETS_WEBHOOK_URL` e `SHEETS_WEBHOOK_SECRET` para Production, Preview e Development.
+7. Clique em **Deploy**.
+8. Em **Project → Settings → Git**, confirme que **Production Branch** está configurada como `main`.
 
-Cada push para `main` publica em produção; branches e pull requests geram previews.
+Depois dessa conexão inicial, o fluxo normal é:
+
+```bash
+git add <arquivos-alterados>
+git commit -m "descrição da alteração"
+git push origin main
+```
+
+O commit é apenas local. É o `git push origin main` que envia a alteração ao GitHub e dispara automaticamente uma nova publicação de produção na Vercel. Branches diferentes de `main` e pull requests geram previews sem substituir o site principal.
 
 ## Domínio na GoDaddy
 
