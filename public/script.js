@@ -11,7 +11,7 @@ const successState = document.querySelector('#success-state');
 
 let currentStep = 0;
 
-const labels = ['Identificação', 'Horários', 'Frequência', 'Preferência', 'Experiências', 'Interesse', 'Sua ideia'];
+const labels = ['Identificação', 'Horários', 'Sua rotina', 'Preferência', 'Experiência', 'Inscrição', 'Observações'];
 
 function showStep(index) {
   currentStep = Math.max(0, Math.min(index, steps.length - 1));
@@ -126,7 +126,7 @@ form.addEventListener('submit', async (event) => {
     errorBox.textContent = `${error.message} Tente novamente em alguns instantes.`;
   } finally {
     submitButton.disabled = false;
-    submitButton.firstChild.textContent = 'Enviar respostas ';
+    submitButton.firstChild.textContent = 'Enviar inscrição ';
   }
 });
 

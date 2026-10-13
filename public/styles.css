@@ -17,7 +17,7 @@ button, input, textarea { font: inherit; }
 button { cursor: pointer; }
 
 .brand { display: inline-flex; align-items: center; color: var(--green); text-decoration: none; }
-.brand-logo { display: block; width: clamp(190px, 18vw, 250px); height: auto; }
+.brand-logo { display: block; width: clamp(220px, 22vw, 310px); height: auto; }
 
 /* Página principal */
 .landing-page { color: var(--green); background: var(--beige); }
