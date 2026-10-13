@@ -17,10 +17,10 @@ function showStep(index) {
   currentStep = Math.max(0, Math.min(index, steps.length - 1));
   steps.forEach((step, stepIndex) => step.classList.toggle('is-active', stepIndex === currentStep));
 
-  const progress = (currentStep / steps.length) * 100;
+  const progress = ((currentStep + 1) / steps.length) * 100;
   progressBar.style.width = `${progress}%`;
   progressLabel.textContent = labels[currentStep];
-  progressCount.textContent = `${currentStep} / ${steps.length}`;
+  progressCount.textContent = `${currentStep + 1} / ${steps.length}`;
 
   backButton.hidden = currentStep === 0;
   nextButton.hidden = currentStep === steps.length - 1;

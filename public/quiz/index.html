@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pesquisa do novo estúdio Theresa Cambiaghi Pilates." />
+    <meta name="theme-color" content="#F0EBE5" />
+    <title>Pesquisa | Theresa Cambiaghi Pilates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script defer src="/script.js"></script>
+  </head>
+  <body class="quiz-page">
+    <header class="quiz-header">
+      <a class="brand" href="/" aria-label="Voltar para a página inicial">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" /><path d="M18 43c9 1 17-2 21-9 4-8 3-16 8-22M30 42c5 2 11 3 17 2M37 21c-4 4-5 9-3 14" /></svg>
+        </span>
+        <span><strong>Theresa Cambiaghi</strong><small>Pilates</small></span>
+      </a>
+      <span class="quiz-header-label">Pesquisa de interesse</span>
+    </header>
+
+    <main class="quiz-shell">
+      <div class="quiz-heading">
+        <p class="eyebrow"><span></span> Queremos ouvir você</p>
+        <h1>Ajude a construir essa <em>nova fase.</em></h1>
+        <p>É rapidinho. Suas respostas vão orientar os últimos detalhes do novo estúdio.</p>
+      </div>
+
+      <section class="quiz-card" aria-label="Pesquisa do novo estúdio">
+        <div class="quiz-progress" aria-label="Progresso do formulário">
+          <span id="progress-label">Identificação</span>
+          <div class="progress-track"><div id="progress-bar"></div></div>
+          <span id="progress-count">1 / 7</span>
+        </div>
+
+        <form id="survey-form" novalidate>
+          <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <fieldset class="quiz-step is-active" data-step="0">
+            <legend>Como podemos te chamar?</legend>
+            <p class="question-helper">Assim conseguimos identificar sua resposta e conversar com você depois.</p>
+            <div class="field-row">
+              <label class="text-field"><span>Seu nome</span><input name="name" type="text" autocomplete="name" placeholder="Digite seu nome" required maxlength="100" /></label>
+              <label class="text-field"><span>Seu WhatsApp</span><input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required maxlength="24" /></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="quiz-step" data-step="1">
+            <legend><span>01</span> Quais horários seriam melhores para você?</legend>
+            <p class="question-helper">Pode marcar mais de uma opção.</p>
+            <div class="options-grid">
+              <label class="option"><input type="checkbox" name="horarios" value="7h–8h" /><span>7h–8h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="8h–10h" /><span>8h–10h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="10h–12h" /><span>10h–12h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="14h–16h" /><span>14h–16h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="16h–18h" /><span>16h–18h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="18h–20h" /><span>18h–20h</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="quiz-step" data-step="2">
+            <legend><span>02</span> Quantas vezes por semana você gostaria de praticar?</legend>
+            <div class="options-grid options-grid-four">
+              <label class="option"><input type="radio" name="frequencia" value="2x" required /><span>2x</span></label>
+              <label class="option"><input type="radio" name="frequencia" value="3x" /><span>3x</span></label>
+              <label class="option"><input type="radio" name="frequencia" value="4x" /><span>4x</span></label>
+              <label class="option"><input type="radio" name="frequencia" value="Até 5x" /><span>Até 5x</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="quiz-step" data-step="3">
+            <legend><span>03</span> O que você prefere?</legend>
+            <div class="options-list">
+              <label class="option"><input type="radio" name="preferencia" value="Dias e horários fixos" required /><span>Dias e horários fixos</span></label>
+              <label class="option"><input type="radio" name="preferencia" value="Flexibilidade para escolher entre os horários disponíveis" /><span>Flexibilidade para escolher entre os horários disponíveis</span></label>
+              <label class="option"><input type="radio" name="preferencia" value="Um pouco dos dois" /><span>Um pouco dos dois</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="quiz-step" data-step="4">
+            <legend><span>04</span> Você gosta da ideia de diferentes experiências de aula?</legend>
+            <p class="question-helper">Com variedade de equipamentos e propostas de movimento.</p>
+            <div class="options-list">
+              <label class="option"><input type="radio" name="experiencias" value="Sim, gosto muito" required /><span>Sim, gosto muito</span></label>
+              <label class="option"><input type="radio" name="experiencias" value="Sim, mas gostaria de entender melhor" /><span>Sim, mas gostaria de entender melhor</span></label>
+              <label class="option"><input type="radio" name="experiencias" value="Prefiro o formato mais tradicional" /><span>Prefiro o formato mais tradicional</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="quiz-step" data-step="5">
+            <legend><span>05</span> Você teria interesse em fazer parte dessa nova fase?</legend>
+            <div class="options-list">
+              <label class="option"><input type="radio" name="interesse" value="Sim" required /><span>Sim</span></label>
+              <label class="option"><input type="radio" name="interesse" value="Talvez — quero conhecer primeiro" /><span>Talvez — quero conhecer primeiro</span></label>
+              <label class="option"><input type="radio" name="interesse" value="Dependeria dos horários" /><span>Dependeria dos horários</span></label>
+              <label class="option"><input type="radio" name="interesse" value="Dependeria dos valores" /><span>Dependeria dos valores</span></label>
+              <label class="option"><input type="radio" name="interesse" value="Neste momento, não" /><span>Neste momento, não</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="quiz-step" data-step="6">
+            <legend><span>06</span> O que você gostaria de encontrar no novo estúdio?</legend>
+            <p class="question-helper">Esta resposta é opcional.</p>
+            <label class="text-field textarea-field"><span>Sua ideia</span><textarea name="mensagem" rows="4" maxlength="1000" placeholder="Escreva aqui..."></textarea></label>
+          </fieldset>
+
+          <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
+          <div class="quiz-actions">
+            <button class="button button-ghost" type="button" id="back-button" hidden><span aria-hidden="true">←</span> Voltar</button>
+            <button class="button button-primary" type="button" id="next-button">Começar <span aria-hidden="true">→</span></button>
+            <button class="button button-primary" type="submit" id="submit-button" hidden>Enviar respostas <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="privacy-note">Ao enviar, você concorda que a equipe Theresa Cambiaghi entre em contato sobre o novo estúdio.</p>
+        </form>
+
+        <div class="success-state" id="success-state" hidden tabindex="-1">
+          <span class="success-icon" aria-hidden="true">✓</span>
+          <p class="eyebrow"><span></span> Resposta recebida</p>
+          <h2>Obrigada por fazer parte desse movimento.</h2>
+          <p>Sua resposta vai nos ajudar muito nos últimos ajustes antes da abertura. 💛</p>
+          <a class="button button-primary" href="/">Voltar ao início</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="quiz-footer"><span>Theresa Cambiaghi Pilates</span><a href="/">Voltar para a página inicial</a></footer>
+  </body>
+</html>
