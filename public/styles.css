@@ -20,25 +20,17 @@ button { cursor: pointer; }
 .brand-logo { display: block; width: clamp(190px, 18vw, 250px); height: auto; }
 
 /* Página principal */
-.landing-page { color: var(--beige); background: var(--green); }
+.landing-page { color: var(--green); background: var(--beige); }
 .landing { position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; }
-.landing-image { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 45%; }
-.landing-overlay {
-  position: absolute;
-  z-index: -2;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(37, 62, 40, .8) 0%, rgba(37, 62, 40, .28) 48%, rgba(37, 62, 40, .12) 100%),
-    linear-gradient(180deg, rgba(37, 62, 40, .4) 0%, transparent 38%, rgba(37, 62, 40, .38) 100%);
-}
-.landing-header { position: absolute; top: 0; left: 0; display: flex; width: 100%; padding: 28px clamp(24px, 4vw, 64px); align-items: center; justify-content: space-between; }
-.brand-on-photo { padding: 11px 15px; border-radius: 18px; background: rgba(250, 248, 245, .9); box-shadow: 0 12px 34px rgba(37, 62, 40, .2); backdrop-filter: blur(10px); }
-.landing-tag { font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
-.landing-copy { position: absolute; left: clamp(24px, 6vw, 96px); bottom: clamp(128px, 17vh, 180px); }
-.landing-kicker { margin: 0 0 18px; padding-left: 46px; font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
-.landing-kicker::before { position: absolute; width: 30px; height: 1px; margin: 6px 0 0 -46px; background: var(--gold); content: ""; }
-.landing-copy h1 { margin: 0; font: 500 clamp(64px, 9vw, 132px)/.82 var(--serif); letter-spacing: -.055em; text-shadow: 0 3px 30px rgba(37, 62, 40, .34); }
-.landing-copy h1 em { color: var(--gold); font-weight: 500; }
+.landing::before, .landing::after { position: absolute; z-index: -1; border-radius: 50%; filter: blur(4px); content: ""; pointer-events: none; }
+.landing::before { top: -18vw; right: -12vw; width: 42vw; height: 42vw; background: radial-gradient(circle, rgba(183, 145, 66, .13), rgba(183, 145, 66, 0) 70%); }
+.landing::after { bottom: -21vw; left: -14vw; width: 48vw; height: 48vw; background: radial-gradient(circle, rgba(37, 62, 40, .1), rgba(37, 62, 40, 0) 70%); }
+.landing-header { position: absolute; z-index: 2; top: 0; left: 0; display: flex; width: 100%; padding: 30px clamp(24px, 4vw, 64px); align-items: center; justify-content: flex-end; }
+.landing-tag { color: rgba(37, 62, 40, .62); font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.landing-brand-panel { display: grid; min-height: 100svh; padding: clamp(82px, 11vh, 120px) 24px 158px; place-content: center; place-items: center; }
+.landing-home-logo { display: block; width: min(820px, 72vw); max-height: 61vh; object-fit: contain; filter: drop-shadow(0 20px 34px rgba(37, 62, 40, .07)); }
+.landing-status { display: flex; margin-top: clamp(16px, 2.5vh, 28px); align-items: center; gap: 18px; color: rgba(37, 62, 40, .58); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; }
+.landing-status strong { padding: 10px 15px; border-radius: 999px; color: var(--green); background: rgba(250, 248, 245, .88); box-shadow: 0 8px 24px rgba(37, 62, 40, .1); font-weight: 600; }
 .landing-cta {
   position: absolute;
   right: clamp(24px, 5vw, 76px);
@@ -46,8 +38,8 @@ button { cursor: pointer; }
   display: flex;
   min-width: min(360px, calc(100% - 48px));
   padding: 20px 22px 20px 26px;
-  color: var(--green);
-  background: var(--beige);
+  color: var(--beige);
+  background: var(--green);
   align-items: center;
   justify-content: space-between;
   gap: 30px;
@@ -57,14 +49,13 @@ button { cursor: pointer; }
   letter-spacing: .08em;
   text-transform: uppercase;
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(37, 62, 40, .32);
+  box-shadow: 0 18px 45px rgba(37, 62, 40, .22);
   transition: color .2s, background .2s, transform .2s;
 }
-.landing-cta small { display: block; margin-bottom: 5px; color: rgba(37, 62, 40, .65); font-size: 8px; font-weight: 500; letter-spacing: .17em; }
-.landing-cta b { display: grid; width: 44px; height: 44px; color: var(--beige); background: var(--green); place-items: center; border-radius: 50%; font-size: 18px; transition: transform .2s; }
-.landing-cta:hover { color: var(--beige); background: var(--green); transform: translateY(-3px); }
-.landing-cta:hover small { color: var(--gold); }
-.landing-cta:hover b { background: var(--gold); transform: translateX(4px); }
+.landing-cta small { display: block; margin-bottom: 5px; color: var(--gold); font-size: 8px; font-weight: 500; letter-spacing: .17em; }
+.landing-cta b { display: grid; width: 44px; height: 44px; color: var(--green); background: var(--beige); place-items: center; border-radius: 50%; font-size: 18px; transition: transform .2s; }
+.landing-cta:hover { background: #1c3220; box-shadow: 0 23px 55px rgba(37, 62, 40, .28); transform: translateY(-3px); }
+.landing-cta:hover b { color: var(--beige); background: var(--gold); transform: translateX(4px); }
 
 /* Quiz */
 .quiz-page { min-height: 100svh; color: var(--green); background: var(--beige); }
@@ -125,11 +116,10 @@ button { cursor: pointer; }
 
 @media (max-width: 700px) {
   .landing-header { padding: 20px; }
-  .landing-tag { display: none; }
-  .landing-image { object-position: 42% center; }
-  .landing-overlay { background: linear-gradient(180deg, rgba(37, 62, 40, .5), rgba(37, 62, 40, .12) 46%, rgba(37, 62, 40, .68)); }
-  .landing-copy { left: 20px; bottom: 160px; }
-  .landing-copy h1 { font-size: clamp(62px, 20vw, 92px); }
+  .landing-tag { width: 100%; text-align: center; }
+  .landing-brand-panel { padding: 76px 16px 154px; }
+  .landing-home-logo { width: min(94vw, 570px); max-height: 55vh; }
+  .landing-status { margin-top: 8px; align-items: center; flex-direction: column; gap: 10px; text-align: center; }
   .landing-cta { right: 20px; bottom: 24px; left: 20px; min-width: 0; }
   .quiz-header { padding: 16px 20px; }
   .quiz-header-label { display: none; }
