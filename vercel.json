@@ -1,6 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/quiz",
+      "destination": "/aulao",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
