@@ -1,0 +1,13 @@
+{
+  "name": "lp-theresa-cambiaghi",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "check": "node --check public/script.js && node --check api/submit.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
