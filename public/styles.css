@@ -97,10 +97,9 @@ button { cursor: pointer; }
 .event-banner-copy { max-width: 680px; }
 .event-banner-kicker { margin: 0 0 18px; color: rgba(37, 62, 40, .72); font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
 .event-banner-copy h1 { margin: 0; font: 500 clamp(44px, 5.2vw, 74px)/.98 var(--serif); letter-spacing: -.04em; }
-.event-banner-copy h1 em { color: var(--gold); font-weight: 500; }
+.event-banner-copy h1 em { color: var(--green); font-weight: 500; }
 .event-banner-copy > p:last-child { max-width: 610px; margin: 22px 0 0; color: rgba(37, 62, 40, .78); font-size: 15px; line-height: 1.7; }
 .event-banner-date { position: relative; display: grid; min-width: 210px; padding: 21px 24px 24px; overflow: hidden; border-radius: 28px; color: var(--beige); background: var(--green); box-shadow: 0 24px 60px rgba(37, 62, 40, .28); gap: 14px; }
-.event-banner-date::after { position: absolute; right: -24px; bottom: -34px; width: 94px; height: 94px; border-radius: 50%; background: rgba(183, 145, 66, .22); content: ""; }
 .event-banner-date-label { color: rgba(240, 235, 229, .68); font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
 .event-banner-date-main { position: relative; z-index: 1; display: flex; align-items: center; gap: 16px; }
 .event-banner-date-main strong { color: var(--beige); font: 500 68px/.82 var(--serif); letter-spacing: -.05em; }
