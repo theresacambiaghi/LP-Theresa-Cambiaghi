@@ -96,7 +96,7 @@ button { cursor: pointer; }
 .event-banner-content { display: flex; width: min(1120px, calc(100% - 64px)); min-height: inherit; margin: 0 auto; padding: clamp(58px, 7vw, 92px) 0; align-items: flex-end; justify-content: space-between; gap: 60px; }
 .event-banner-copy { max-width: 680px; }
 .event-banner-kicker { margin: 0 0 18px; color: rgba(37, 62, 40, .72); font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
-.event-banner-copy h1 { margin: 0; font: 500 clamp(44px, 5.2vw, 74px)/.98 var(--serif); letter-spacing: -.04em; }
+.event-banner-copy h1 { margin: 0; font: 500 clamp(44px, 5.2vw, 74px)/.98 var(--serif); font-variant-caps: small-caps; font-feature-settings: "smcp" 1; letter-spacing: .01em; }
 .event-banner-copy h1 em { color: var(--green); font-weight: 500; }
 .event-banner-copy > p:last-child { max-width: 610px; margin: 22px 0 0; color: rgba(37, 62, 40, .78); font-size: 15px; line-height: 1.7; }
 .event-banner-date { position: relative; display: grid; min-width: 210px; padding: 21px 24px 24px; overflow: hidden; border-radius: 28px; color: var(--beige); background: var(--green); box-shadow: 0 24px 60px rgba(37, 62, 40, .28); gap: 14px; }
