@@ -162,6 +162,7 @@ button { cursor: pointer; }
 .button { display: inline-flex; min-height: 46px; padding: 0 20px; border: 0; border-radius: 999px; align-items: center; justify-content: center; gap: 20px; color: var(--beige); background: var(--green); box-shadow: 0 9px 24px rgba(37, 62, 40, .2); font-size: 10px; font-weight: 600; letter-spacing: .09em; text-decoration: none; text-transform: uppercase; transition: transform .18s, background .18s, box-shadow .18s; }
 .button:hover { background: #1c3220; box-shadow: 0 13px 30px rgba(37, 62, 40, .26); transform: translateY(-2px); }
 .button-ghost { color: var(--green); background: var(--paper); box-shadow: 0 6px 18px rgba(37, 62, 40, .08); }
+.button-ghost:hover { color: #fff; background: var(--gold); box-shadow: 0 13px 30px rgba(183, 145, 66, .3); }
 .button-primary { margin-left: auto; }
 .button:disabled { cursor: wait; opacity: .6; transform: none; }
 .button:focus-visible, .option:has(input:focus-visible), input:focus-visible, textarea:focus-visible, .landing-cta:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
