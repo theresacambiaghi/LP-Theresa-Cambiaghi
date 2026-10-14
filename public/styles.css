@@ -39,6 +39,7 @@
 }
 
 :root {
+  color-scheme: only light;
   --green: #253e28;
   --gold: #b79142;
   --beige: #f0ebe5;
@@ -49,11 +50,11 @@
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+html { background: var(--beige); scroll-behavior: smooth; }
+body { margin: 0; background: var(--beige); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
 body::selection { color: var(--beige); background: var(--green); }
 a { color: inherit; }
-button, input, textarea { font: inherit; }
+button, input, textarea { color-scheme: light; font: inherit; }
 button { cursor: pointer; }
 
 .brand { display: inline-flex; align-items: center; color: var(--green); text-decoration: none; }
