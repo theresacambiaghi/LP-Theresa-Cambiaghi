@@ -6,6 +6,7 @@ Landing page temporária do novo estúdio Theresa Cambiaghi Pilates, com pesquis
 
 - `public/`: página, estilos, JavaScript e imagem da campanha.
 - `api/submit.js`: função serverless da Vercel que valida e encaminha as respostas.
+- `api/availability.js`: consulta as vagas restantes de cada horário do aulão.
 - `google-apps-script.gs`: código para receber os dados na planilha.
 
 ## Conectar a planilha
@@ -17,6 +18,8 @@ Landing page temporária do novo estúdio Theresa Cambiaghi Pilates, com pesquis
 5. Execute como **você** e permita acesso para **qualquer pessoa**. A proteção é feita pelo segredo enviado somente pelo servidor.
 6. Copie a URL final terminada em `/exec`.
 7. Na Vercel, adicione `SHEETS_WEBHOOK_URL` e `SHEETS_WEBHOOK_SECRET` em **Settings → Environment Variables** para Production, Preview e Development.
+
+O Apps Script usa um bloqueio durante cada inscrição e limita cada turma do aulão a 8 pessoas. Ao atualizar esse código depois da primeira publicação, abra **Implantar → Gerenciar implantações**, edite a implantação, escolha **Nova versão** e confirme. A URL `/exec` permanece a mesma.
 
 ## Publicar na Vercel
 

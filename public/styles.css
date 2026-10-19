@@ -129,6 +129,22 @@ button { cursor: pointer; }
 .event-banner-date-main > span { display: grid; padding-left: 16px; border-left: 1px solid var(--gold); gap: 5px; }
 .event-banner-date-main b { color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
 .event-banner-date-main small { color: rgba(244, 232, 218, .68); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.event-banner { min-height: min(900px, 92svh); color: #fff8ef; background: #26140d; }
+.event-banner-image { object-position: center 52%; }
+.event-banner-overlay { background: linear-gradient(180deg, rgba(38, 16, 8, .72) 0%, rgba(48, 21, 11, .3) 35%, rgba(38, 16, 8, .04) 58%, rgba(38, 16, 8, .72) 100%); }
+.event-cover-content { display: grid; width: min(1080px, calc(100% - 64px)); min-height: inherit; margin: 0 auto; padding: clamp(40px, 7vh, 72px) 0 clamp(36px, 6vh, 64px); grid-template-rows: auto 1fr auto; justify-items: center; text-align: center; }
+.event-cover-logo-link { align-self: start; }
+.event-cover-logo { display: block; width: clamp(260px, 25vw, 370px); height: auto; filter: brightness(0) invert(1) drop-shadow(0 3px 14px rgba(30, 12, 7, .62)); }
+.event-cover-heading { align-self: center; margin-top: -2vh; transform: translateY(-2vh); }
+.event-cover-heading h1 { margin: 0; color: #fff8ef; font: 300 clamp(54px, 6vw, 88px)/.94 "TT Ramillas", var(--serif); letter-spacing: -.025em; text-shadow: 0 2px 4px rgba(74, 37, 22, 1), 0 0 20px rgba(74, 37, 22, 1), 0 0 48px rgba(74, 37, 22, .96); }
+.event-cover-heading p { margin: 28px 0 0; color: #fff8ef; font: 400 clamp(17px, 1.8vw, 24px)/1 var(--sans); letter-spacing: .08em; text-shadow: 0 2px 4px rgba(74, 37, 22, 1), 0 0 18px rgba(74, 37, 22, 1), 0 0 38px rgba(74, 37, 22, .92); }
+.event-cover-heading p span { margin: 0 10px; color: rgba(255, 248, 239, .7); }
+.event-cover-bottom { align-self: end; display: grid; justify-items: center; }
+.event-cover-bottom > p { margin: 0; color: #fff8ef; font: 400 clamp(17px, 1.8vw, 24px)/1.42 var(--serif); letter-spacing: .08em; text-shadow: 0 2px 4px rgba(74, 37, 22, 1), 0 0 17px rgba(74, 37, 22, .98), 0 0 36px rgba(74, 37, 22, .88); }
+.event-cover-cta { display: inline-flex; min-height: 46px; margin-top: 18px; padding: 0 23px; border-radius: 999px; color: #fff; background: var(--gold); align-items: center; gap: 16px; box-shadow: 0 12px 30px rgba(111, 71, 25, .4); font-size: 9px; font-weight: 600; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; transition: color .2s, background .2s, transform .2s; }
+.event-cover-cta:hover { color: var(--beige); background: var(--green); transform: translateY(-2px); }
+.event-cover-bottom > i { width: 70px; height: 1px; margin: 18px 0 15px; background: rgba(255, 248, 239, .72); }
+.event-cover-bottom > small { color: #fff8ef; font: italic 400 clamp(12px, 1.2vw, 16px)/1.4 var(--serif); letter-spacing: .08em; text-shadow: 0 2px 3px rgba(74, 37, 22, 1), 0 0 10px rgba(74, 37, 22, .88); }
 .quiz-card { padding: clamp(24px, 4vw, 40px); border-radius: 26px; background: rgba(250, 248, 245, .82); box-shadow: 0 22px 65px rgba(37, 62, 40, .13); backdrop-filter: blur(8px); }
 .quiz-progress { display: grid; margin-bottom: 30px; color: rgba(37, 62, 40, .64); grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; font-size: 10px; font-weight: 600; letter-spacing: .11em; text-transform: uppercase; }
 .progress-track { height: 4px; overflow: hidden; border-radius: 999px; background: rgba(37, 62, 40, .1); box-shadow: inset 0 1px 2px rgba(37, 62, 40, .08); }
@@ -156,6 +172,17 @@ button { cursor: pointer; }
 .option:hover span { box-shadow: 0 10px 24px rgba(37, 62, 40, .12); transform: translateY(-1px); }
 .option input:checked + span { color: var(--beige); background: var(--green); box-shadow: 0 9px 24px rgba(37, 62, 40, .22); }
 .option input:checked + span::after { color: var(--gold); content: "✓"; font: 600 11px/1 var(--sans); }
+.slot-option span { min-height: 86px; padding-right: 14px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 4px; }
+.slot-option span::after { display: none; }
+.slot-option b { font-size: 12px; font-weight: 600; white-space: nowrap; }
+.slot-duration { color: rgba(37, 62, 40, .52); font-size: 8px; font-weight: 500; letter-spacing: .05em; }
+.slot-remaining { color: rgba(37, 62, 40, .68); font-size: 9px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.slot-option input:checked + span .slot-duration { color: rgba(244, 232, 218, .62); }
+.slot-option input:checked + span .slot-remaining { color: rgba(244, 232, 218, .72); }
+.slot-option:has(input:disabled) { cursor: not-allowed; }
+.slot-option input:disabled + span { color: rgba(37, 62, 40, .42); background: rgba(250, 248, 245, .55); box-shadow: none; }
+.slot-option input:disabled + span .slot-remaining { color: #9a504a; }
+.availability-status { min-height: 16px; margin: 15px 0 0; color: rgba(37, 62, 40, .62); font-size: 10px; line-height: 1.5; }
 .honeypot { position: absolute !important; left: -9999px !important; }
 .form-error { min-height: 18px; margin-top: 13px; color: var(--green); font-size: 13px; line-height: 1.45; }
 .quiz-actions { display: flex; margin-top: 8px; justify-content: space-between; gap: 10px; }
@@ -203,6 +230,19 @@ button { cursor: pointer; }
   .event-banner-support span:not(:last-child)::after { content: none; }
   .event-banner-date { width: min(100%, 260px); min-width: 0; padding: 17px 20px 20px; gap: 11px; place-self: flex-start; border-radius: 22px; }
   .event-banner-date-main strong { font-size: 54px; }
+  .event-banner { min-height: max(920px, 100svh); }
+  .event-banner-image { object-position: center center; }
+  .event-banner-overlay { background: linear-gradient(180deg, rgba(38, 16, 8, .74) 0%, rgba(48, 21, 11, .38) 34%, rgba(38, 16, 8, .03) 59%, rgba(38, 16, 8, .76) 100%); }
+  .event-cover-content { width: 100%; padding: 42px 22px 48px; }
+  .event-cover-logo { width: min(72vw, 310px); }
+  .event-cover-heading { margin-top: -12svh; transform: translateY(-105px); }
+  .event-cover-heading h1 { font-size: clamp(40px, 10.3vw, 48px); line-height: .95; }
+  .event-cover-heading p { margin-top: 20px; font-size: 16px; text-shadow: 0 2px 4px rgba(74, 37, 22, 1), 0 0 18px rgba(74, 37, 22, 1), 0 0 38px rgba(74, 37, 22, .96); }
+  .event-cover-heading p span { margin: 0 7px; }
+  .event-cover-bottom > p { font-size: clamp(16px, 4.2vw, 19px); line-height: 1.42; }
+  .event-cover-cta { min-height: 44px; margin-top: 15px; }
+  .event-cover-bottom > i { margin: 15px 0 13px; }
+  .event-cover-bottom > small { max-width: 350px; font-size: 12px; }
   .quiz-shell { width: min(100% - 36px, 760px); padding: 46px 0 64px; }
   .quiz-card { padding: 30px 22px; border-radius: 24px; }
   .quiz-progress { margin-bottom: 36px; gap: 10px; }
@@ -211,8 +251,10 @@ button { cursor: pointer; }
   .field-row { grid-template-columns: 1fr; gap: 12px; }
   .text-field { margin-top: 16px; }
   .options-grid, .options-grid-four { grid-template-columns: repeat(2, 1fr); gap: 11px; }
+  .member-schedule-grid { grid-template-columns: repeat(2, 1fr); }
   .options-list { gap: 11px; }
   .option span { min-height: 52px; padding: 13px 40px 13px 15px; }
+  .slot-option span { min-height: 86px; padding-right: 14px; }
   .quiz-actions { margin-top: 18px; flex-direction: column-reverse; gap: 12px; }
   .button { width: 100%; }
   .button-primary { margin-left: 0; }

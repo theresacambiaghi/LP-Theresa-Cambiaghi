@@ -1,4 +1,5 @@
-const REQUIRED_FIELDS = ['name', 'whatsapp', 'horarios', 'frequencia', 'preferencia', 'experiencias', 'interesse'];
+const REQUIRED_FIELDS = ['name', 'whatsapp', 'horarios', 'frequencia', 'preferencia', 'experiencias', 'interesse', 'aulaoHorario'];
+const AULAO_SLOTS = new Set(['8h30–9h30', '9h30–10h30', '10h30–11h30', '11h30–12h30']);
 
 function clean(value, max = 250) {
   return typeof value === 'string' ? value.trim().slice(0, max) : '';
@@ -23,11 +24,12 @@ export default async function handler(request, response) {
   const data = {
     name: clean(body.name, 100),
     whatsapp: clean(body.whatsapp, 24),
-    horarios: Array.isArray(body.horarios) ? body.horarios.map((item) => clean(item, 30)).filter(Boolean).slice(0, 8) : [],
+    horarios: Array.isArray(body.horarios) ? body.horarios.map((item) => clean(item, 30)).filter(Boolean).slice(0, 12) : [],
     frequencia: clean(body.frequencia, 40),
     preferencia: clean(body.preferencia),
     experiencias: clean(body.experiencias),
     interesse: clean(body.interesse),
+    aulaoHorario: clean(body.aulaoHorario, 30),
     mensagem: clean(body.mensagem, 1000),
     submittedAt: new Date().toISOString(),
     source: 'Aulão 24/10 - LP Theresa Cambiaghi'
@@ -39,6 +41,7 @@ export default async function handler(request, response) {
   });
 
   if (missing.length) return response.status(400).json({ error: 'Preencha todas as respostas obrigatórias.' });
+  if (!AULAO_SLOTS.has(data.aulaoHorario)) return response.status(400).json({ error: 'Escolha um horário válido para o aulão.' });
 
   const webhookUrl = process.env.SHEETS_WEBHOOK_URL;
   if (!webhookUrl) {
@@ -56,7 +59,10 @@ export default async function handler(request, response) {
 
     if (!sheetsResponse.ok) throw new Error(`Google Sheets respondeu ${sheetsResponse.status}`);
     const result = await sheetsResponse.json().catch(() => ({ ok: true }));
-    if (result.ok === false) throw new Error(result.error || 'Falha ao gravar na planilha.');
+    if (result.ok === false) {
+      if (result.code === 'SLOT_FULL') return response.status(409).json({ error: result.error, code: result.code });
+      throw new Error(result.error || 'Falha ao gravar na planilha.');
+    }
 
     return response.status(200).json({ ok: true });
   } catch (error) {

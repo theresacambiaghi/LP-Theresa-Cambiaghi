@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vercel dev",
-    "check": "node --check public/script.js && node --check api/submit.js"
+    "check": "node --check public/script.js && node --check api/submit.js && node --check api/availability.js"
   },
   "engines": {
     "node": ">=20"

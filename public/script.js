@@ -11,7 +11,7 @@ const successState = document.querySelector('#success-state');
 
 let currentStep = 0;
 
-const labels = ['Identificação', 'Horários', 'Sua rotina', 'Preferência', 'Experiência', 'Inscrição', 'Observações'];
+const labels = ['Identificação', 'Horários dos membros', 'Sua rotina', 'Preferência', 'Experiência', 'Interesse', 'Observações', 'Horário do aulão'];
 
 function showStep(index) {
   currentStep = Math.max(0, Math.min(index, steps.length - 1));
@@ -51,7 +51,7 @@ function validateCurrentStep() {
     return false;
   }
 
-  if (currentStep >= 2 && currentStep <= 5) {
+  if ((currentStep >= 2 && currentStep <= 5) || currentStep === 7) {
     const groupName = required[0]?.name;
     if (groupName && !step.querySelector(`input[name="${groupName}"]:checked`)) {
       errorBox.textContent = 'Selecione uma opção para continuar.';
@@ -105,6 +105,7 @@ form.addEventListener('submit', async (event) => {
     preferencia: formData.get('preferencia'),
     experiencias: formData.get('experiencias'),
     interesse: formData.get('interesse'),
+    aulaoHorario: formData.get('aulaoHorario'),
     mensagem: formData.get('mensagem'),
     website: formData.get('website')
   };
@@ -116,7 +117,10 @@ form.addEventListener('submit', async (event) => {
       body: JSON.stringify(payload)
     });
     const result = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(result.error || 'Não foi possível enviar agora.');
+    if (!response.ok) {
+      if (response.status === 409) loadAvailability();
+      throw new Error(result.error || 'Não foi possível enviar agora.');
+    }
 
     form.hidden = true;
     document.querySelector('.quiz-progress').hidden = true;
@@ -131,3 +135,29 @@ form.addEventListener('submit', async (event) => {
 });
 
 showStep(0);
+
+async function loadAvailability() {
+  const status = document.querySelector('#availability-status');
+  if (!status) return;
+
+  try {
+    const response = await fetch('/api/availability', { method: 'GET', cache: 'no-store' });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.slots) throw new Error('Disponibilidade indisponível');
+
+    document.querySelectorAll('input[name="aulaoHorario"]').forEach((input) => {
+      const slot = result.slots[input.value];
+      const remaining = input.closest('.slot-option').querySelector('.slot-remaining');
+      const available = !slot || slot.available !== false;
+      input.disabled = !available;
+      if (!available) input.checked = false;
+      remaining.textContent = available ? `${slot?.remaining ?? result.capacity} ${slot?.remaining === 1 ? 'vaga' : 'vagas'}` : 'Esgotado';
+    });
+
+    status.textContent = 'As vagas são confirmadas no momento do envio.';
+  } catch {
+    status.textContent = 'A disponibilidade será confirmada no momento do envio.';
+  }
+}
+
+loadAvailability();

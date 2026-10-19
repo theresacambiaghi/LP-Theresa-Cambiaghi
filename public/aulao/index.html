@@ -16,45 +16,40 @@
     <script defer src="/script.js"></script>
   </head>
   <body class="quiz-page">
-    <header class="quiz-header">
-      <a class="brand" href="/" aria-label="Voltar para a página inicial">
-        <img class="brand-logo" src="/logo-horizontal.png" alt="Theresa Cambiaghi Pilates" width="1463" height="312" />
-      </a>
-      <span class="quiz-header-label">Aulão especial · 24 de outubro</span>
-    </header>
-
     <section class="event-banner" aria-labelledby="event-banner-title">
       <picture>
-        <source media="(max-width: 700px)" srcset="/theresa-cambiaghi-aulao-mobile.jpeg" />
-        <img class="event-banner-image" src="/theresa-cambiaghi-aulao.jpeg" alt="Estúdio de Pilates Theresa Cambiaghi" width="1800" height="1352" />
+        <source media="(max-width: 700px)" srcset="/theresa-cambiaghi-form-header.jpeg" />
+        <img class="event-banner-image" src="/theresa-cambiaghi-form-header.jpeg" alt="Estúdio de Pilates Theresa Cambiaghi" width="1509" height="1600" />
       </picture>
       <div class="event-banner-overlay" aria-hidden="true"></div>
-      <div class="event-banner-content">
-        <div class="event-banner-copy">
-          <p class="event-banner-kicker">Aulão especial</p>
-          <h1 id="event-banner-title">Um evento<br />para<br class="mobile-title-break" /> <em>movimentar</em><br />e celebrar</h1>
-          <p class="event-banner-support">
-            <span>Preencha o formulário para demonstrar</span>
-            <span>seu interesse e nos ajudar a definir</span>
-            <span>o melhor horário para essa experiência.</span>
-          </p>
+      <div class="event-cover-content">
+        <a class="event-cover-logo-link" href="/" aria-label="Voltar para a página inicial">
+          <picture>
+            <source media="(max-width: 700px)" srcset="/logo-stacked.png" />
+            <img class="event-cover-logo" src="/logo-horizontal.png" alt="Theresa Cambiaghi Pilates" width="1463" height="312" />
+          </picture>
+        </a>
+
+        <div class="event-cover-heading">
+          <h1 id="event-banner-title">Movimento é o que<br />conecta tudo.</h1>
+          <p>24/10 <span aria-hidden="true">|</span> 8h30 às 12h30</p>
         </div>
-        <div class="event-banner-date" aria-label="24 de outubro">
-          <span class="event-banner-date-label">Reserve a data</span>
-          <div class="event-banner-date-main">
-            <strong>24</strong>
-            <span><b>outubro</b><small>sábado</small></span>
-          </div>
+
+        <div class="event-cover-bottom">
+          <p>Uma experiência com aulas de Pilates<br />durante toda a manhã.<br />Venha nos conhecer. Inscreva-se.</p>
+          <a class="event-cover-cta" href="#formulario">Fazer inscrição <span aria-hidden="true">↓</span></a>
+          <i aria-hidden="true"></i>
+          <small>Com parcerias incríveis porque você merece esse cuidado.</small>
         </div>
       </div>
     </section>
 
-    <main class="quiz-shell quiz-shell-form">
+    <main class="quiz-shell quiz-shell-form" id="formulario">
       <section class="quiz-card" aria-label="Formulário de inscrição para o aulão">
         <div class="quiz-progress" aria-label="Progresso do formulário">
           <span id="progress-label">Identificação</span>
           <div class="progress-track"><div id="progress-bar"></div></div>
-          <span id="progress-count">1 / 7</span>
+          <span id="progress-count">1 / 8</span>
         </div>
 
         <form id="survey-form" novalidate>
@@ -70,13 +65,18 @@
           </fieldset>
 
           <fieldset class="quiz-step" data-step="1">
-            <legend><span>01</span> No dia 24 de outubro, quais horários funcionam melhor para você?</legend>
-            <p class="question-helper">Pode marcar mais de uma opção.</p>
-            <div class="options-grid options-grid-four">
+            <legend><span>01</span> Pensando em fazer parte do novo estúdio, quais horários funcionariam melhor para sua rotina?</legend>
+            <p class="question-helper">Pode marcar mais de uma opção. Essas respostas vão nos ajudar a definir a grade de horários dos membros.</p>
+            <div class="options-grid member-schedule-grid">
               <label class="option"><input type="checkbox" name="horarios" value="8h–9h" /><span>8h–9h</span></label>
               <label class="option"><input type="checkbox" name="horarios" value="9h–10h" /><span>9h–10h</span></label>
               <label class="option"><input type="checkbox" name="horarios" value="10h–11h" /><span>10h–11h</span></label>
               <label class="option"><input type="checkbox" name="horarios" value="11h–12h" /><span>11h–12h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="14h–15h" /><span>14h–15h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="15h–16h" /><span>15h–16h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="16h–17h" /><span>16h–17h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="17h–18h" /><span>17h–18h</span></label>
+              <label class="option"><input type="checkbox" name="horarios" value="18h–19h" /><span>18h–19h</span></label>
             </div>
           </fieldset>
 
@@ -110,12 +110,13 @@
           </fieldset>
 
           <fieldset class="quiz-step" data-step="5">
-            <legend><span>05</span> Podemos considerar sua inscrição para o aulão?</legend>
+            <legend><span>05</span> Você teria interesse em fazer parte dessa nova fase?</legend>
             <div class="options-list">
-              <label class="option"><input type="radio" name="interesse" value="Sim, quero participar" required /><span>Sim, quero participar</span></label>
-              <label class="option"><input type="radio" name="interesse" value="Talvez — quero receber mais detalhes" /><span>Talvez — quero receber mais detalhes</span></label>
-              <label class="option"><input type="radio" name="interesse" value="Dependeria do horário confirmado" /><span>Dependeria do horário confirmado</span></label>
-              <label class="option"><input type="radio" name="interesse" value="Neste momento, não poderei participar" /><span>Neste momento, não poderei participar</span></label>
+              <label class="option"><input type="radio" name="interesse" value="Sim" required /><span>Sim</span></label>
+              <label class="option"><input type="radio" name="interesse" value="Talvez — quero conhecer primeiro" /><span>Talvez — quero conhecer primeiro</span></label>
+              <label class="option"><input type="radio" name="interesse" value="Dependeria dos horários" /><span>Dependeria dos horários</span></label>
+              <label class="option"><input type="radio" name="interesse" value="Dependeria dos valores" /><span>Dependeria dos valores</span></label>
+              <label class="option"><input type="radio" name="interesse" value="Neste momento, não" /><span>Neste momento, não</span></label>
             </div>
           </fieldset>
 
@@ -123,6 +124,18 @@
             <legend><span>06</span> O que você gostaria de encontrar no aulão ou no novo estúdio?</legend>
             <p class="question-helper">Esta resposta é opcional.</p>
             <label class="text-field textarea-field"><span>Conte para a gente</span><textarea name="mensagem" rows="4" maxlength="1000" placeholder="Escreva aqui..."></textarea></label>
+          </fieldset>
+
+          <fieldset class="quiz-step" data-step="7">
+            <legend><span>07</span> Em qual horário você gostaria de participar do aulão?</legend>
+            <p class="question-helper">Cada aulão dura 1 hora e tem exatamente 8 vagas. Os horários completos ficam indisponíveis automaticamente.</p>
+            <div class="options-grid options-grid-four aulao-slots">
+              <label class="option slot-option"><input type="radio" name="aulaoHorario" value="8h30–9h30" required /><span><b>8h30–9h30</b><small class="slot-duration">Duração: 1 hora</small><small class="slot-remaining">8 vagas</small></span></label>
+              <label class="option slot-option"><input type="radio" name="aulaoHorario" value="9h30–10h30" /><span><b>9h30–10h30</b><small class="slot-duration">Duração: 1 hora</small><small class="slot-remaining">8 vagas</small></span></label>
+              <label class="option slot-option"><input type="radio" name="aulaoHorario" value="10h30–11h30" /><span><b>10h30–11h30</b><small class="slot-duration">Duração: 1 hora</small><small class="slot-remaining">8 vagas</small></span></label>
+              <label class="option slot-option"><input type="radio" name="aulaoHorario" value="11h30–12h30" /><span><b>11h30–12h30</b><small class="slot-duration">Duração: 1 hora</small><small class="slot-remaining">8 vagas</small></span></label>
+            </div>
+            <p class="availability-status" id="availability-status" aria-live="polite">Consultando as vagas disponíveis...</p>
           </fieldset>
 
           <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
