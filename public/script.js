@@ -11,7 +11,7 @@ const successState = document.querySelector('#success-state');
 
 let currentStep = 0;
 
-const labels = ['Identificação', 'Horários dos membros', 'Sua rotina', 'Preferência', 'Experiência', 'Interesse', 'Observações', 'Horário do aulão'];
+const labels = ['Identificação', 'Horário do aulão'];
 
 function showStep(index) {
   currentStep = Math.max(0, Math.min(index, steps.length - 1));
@@ -45,16 +45,10 @@ function validateCurrentStep() {
     }
   }
 
-  if (currentStep === 1 && !step.querySelector('input:checked')) {
-    errorBox.textContent = 'Escolha pelo menos um horário para continuar.';
-    step.querySelector('input').focus();
-    return false;
-  }
-
-  if ((currentStep >= 2 && currentStep <= 5) || currentStep === 7) {
+  if (currentStep === 1) {
     const groupName = required[0]?.name;
     if (groupName && !step.querySelector(`input[name="${groupName}"]:checked`)) {
-      errorBox.textContent = 'Selecione uma opção para continuar.';
+      errorBox.textContent = 'Escolha um horário para o aulão.';
       step.querySelector('input').focus();
       return false;
     }
@@ -100,13 +94,7 @@ form.addEventListener('submit', async (event) => {
   const payload = {
     name: formData.get('name'),
     whatsapp: formData.get('whatsapp'),
-    horarios: formData.getAll('horarios'),
-    frequencia: formData.get('frequencia'),
-    preferencia: formData.get('preferencia'),
-    experiencias: formData.get('experiencias'),
-    interesse: formData.get('interesse'),
     aulaoHorario: formData.get('aulaoHorario'),
-    mensagem: formData.get('mensagem'),
     website: formData.get('website')
   };
 

@@ -5,8 +5,7 @@
 const AULAO_CAPACITY = 8;
 const AULAO_SLOTS = ['8h30–9h30', '9h30–10h30', '10h30–11h30', '11h30–12h30'];
 const RESPONSE_HEADERS = [
-  'Data e hora', 'Nome', 'WhatsApp', 'Horários de interesse como membro', 'Frequência',
-  'Preferência', 'Experiências', 'Interesse no novo estúdio', 'Mensagem', 'Origem', 'Horário do aulão'
+  'Data e hora', 'Nome', 'WhatsApp', 'Horário do aulão'
 ];
 
 function doPost(e) {
@@ -44,15 +43,6 @@ function doPost(e) {
         'Data e hora': data.submittedAt || new Date().toISOString(),
         'Nome': data.name,
         'WhatsApp': data.whatsapp,
-        'Horários': Array.isArray(data.horarios) ? data.horarios.join(', ') : '',
-        'Horários de interesse como membro': Array.isArray(data.horarios) ? data.horarios.join(', ') : '',
-        'Frequência': data.frequencia,
-        'Preferência': data.preferencia,
-        'Experiências': data.experiencias,
-        'Interesse': data.interesse,
-        'Interesse no novo estúdio': data.interesse,
-        'Mensagem': data.mensagem,
-        'Origem': data.source,
         'Horário do aulão': selectedSlot
       };
 
@@ -73,7 +63,7 @@ function doPost(e) {
 function ensureHeaders(sheet) {
   if (sheet.getLastRow() === 0) {
     sheet.getRange(1, 1, 1, RESPONSE_HEADERS.length).setValues([RESPONSE_HEADERS]);
-    sheet.getRange(1, 1, 1, RESPONSE_HEADERS.length).setFontWeight('bold').setBackground('#253e28').setFontColor('#f4e8da');
+    sheet.getRange(1, 1, 1, RESPONSE_HEADERS.length).setFontWeight('bold').setBackground('#1c6d68').setFontColor('#f4e8da');
     sheet.setFrozenRows(1);
     return RESPONSE_HEADERS.slice();
   }
@@ -81,13 +71,12 @@ function ensureHeaders(sheet) {
   const lastColumn = Math.max(sheet.getLastColumn(), 1);
   const headers = sheet.getRange(1, 1, 1, lastColumn).getValues()[0].map(String);
   RESPONSE_HEADERS.forEach(function(header) {
-    const legacyHeader = header === 'Horários de interesse como membro' ? 'Horários' : header === 'Interesse no novo estúdio' ? 'Interesse' : '';
-    if (headers.indexOf(header) === -1 && (!legacyHeader || headers.indexOf(legacyHeader) === -1)) headers.push(header);
+    if (headers.indexOf(header) === -1) headers.push(header);
   });
 
   if (headers.length > lastColumn) {
     sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
-    sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold').setBackground('#253e28').setFontColor('#f4e8da');
+    sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold').setBackground('#1c6d68').setFontColor('#f4e8da');
   }
   return headers;
 }

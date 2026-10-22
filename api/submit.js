@@ -1,4 +1,4 @@
-const REQUIRED_FIELDS = ['name', 'whatsapp', 'horarios', 'frequencia', 'preferencia', 'experiencias', 'interesse', 'aulaoHorario'];
+const REQUIRED_FIELDS = ['name', 'whatsapp', 'aulaoHorario'];
 const AULAO_SLOTS = new Set(['8h30–9h30', '9h30–10h30', '10h30–11h30', '11h30–12h30']);
 
 function clean(value, max = 250) {
@@ -24,13 +24,7 @@ export default async function handler(request, response) {
   const data = {
     name: clean(body.name, 100),
     whatsapp: clean(body.whatsapp, 24),
-    horarios: Array.isArray(body.horarios) ? body.horarios.map((item) => clean(item, 30)).filter(Boolean).slice(0, 12) : [],
-    frequencia: clean(body.frequencia, 40),
-    preferencia: clean(body.preferencia),
-    experiencias: clean(body.experiencias),
-    interesse: clean(body.interesse),
     aulaoHorario: clean(body.aulaoHorario, 30),
-    mensagem: clean(body.mensagem, 1000),
     submittedAt: new Date().toISOString(),
     source: 'Aulão 24/10 - LP Theresa Cambiaghi'
   };
