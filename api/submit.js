@@ -26,7 +26,7 @@ export default async function handler(request, response) {
     whatsapp: clean(body.whatsapp, 24),
     aulaoHorario: clean(body.aulaoHorario, 30),
     submittedAt: new Date().toISOString(),
-    source: 'Aulão 24/10 - LP Theresa Cambiaghi'
+    source: 'Aulão 30/10 - LP Theresa Cambiaghi'
   };
 
   const missing = REQUIRED_FIELDS.filter((field) => {
