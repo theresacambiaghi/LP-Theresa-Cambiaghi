@@ -3,7 +3,7 @@
  * Depois configure a propriedade WEBHOOK_SECRET e implante uma nova versão como Aplicativo da Web.
  */
 const AULAO_CAPACITY = 8;
-const AULAO_SLOTS = ['8h30–9h30', '9h30–10h30', '10h30–11h30', '11h30–12h30'];
+const AULAO_SLOTS = ['8h–9h', '9h–10h', '10h–11h', '11h–12h'];
 const RESPONSE_HEADERS = [
   'Data e hora', 'Nome', 'WhatsApp', 'Horário do aulão'
 ];

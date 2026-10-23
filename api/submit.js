@@ -1,5 +1,5 @@
 const REQUIRED_FIELDS = ['name', 'whatsapp', 'aulaoHorario'];
-const AULAO_SLOTS = new Set(['8h30–9h30', '9h30–10h30', '10h30–11h30', '11h30–12h30']);
+const AULAO_SLOTS = new Set(['8h–9h', '9h–10h', '10h–11h', '11h–12h']);
 
 function clean(value, max = 250) {
   return typeof value === 'string' ? value.trim().slice(0, max) : '';
