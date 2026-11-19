@@ -202,6 +202,82 @@ button { cursor: pointer; }
 .quiz-footer { display: flex; max-width: 1120px; margin: 0 auto; padding: 24px 28px; align-items: center; justify-content: space-between; color: rgba(28, 109, 104, .58); font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
 .quiz-footer a { color: var(--green); text-decoration: none; }
 
+/* Página da feira */
+.fair-page { min-height: 100svh; color: var(--green); background: #efe2d3; }
+.fair-shell { width: min(100%, 760px); min-height: 100svh; margin: 0 auto; overflow: hidden; background: var(--beige); box-shadow: 0 0 70px rgba(28, 109, 104, .11); }
+.fair-header { display: flex; min-height: 96px; padding: 21px clamp(22px, 5vw, 40px); align-items: center; justify-content: space-between; gap: 24px; }
+.fair-header a { display: block; width: min(310px, 58vw); }
+.fair-header img { display: block; width: 100%; height: auto; }
+.fair-header > span { color: rgba(28, 109, 104, .65); font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-align: right; text-transform: uppercase; }
+.fair-hero { position: relative; min-height: 570px; overflow: hidden; color: #fff9f1; isolation: isolate; }
+.fair-hero > img { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
+.fair-hero-overlay { position: absolute; z-index: -2; inset: 0; background: linear-gradient(180deg, rgba(16, 55, 52, .38) 0%, rgba(15, 59, 56, .62) 44%, rgba(10, 46, 43, .96) 100%); }
+.fair-hero-content { display: flex; min-height: 570px; padding: 48px clamp(24px, 7vw, 56px) 44px; justify-content: flex-end; flex-direction: column; }
+.fair-kicker { width: max-content; margin: 0 0 20px; padding: 9px 14px; border-radius: 999px; color: #fff8e9; background: rgba(183, 145, 66, .9); font-size: .75rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
+.fair-hero h1 { max-width: 600px; margin: 0; font: 400 clamp(3rem, 8vw, 4.75rem)/.94 "TT Ramillas", var(--serif); letter-spacing: -.025em; text-wrap: balance; }
+.fair-offer { max-width: 520px; margin: 18px 0 28px; color: rgba(255, 249, 241, .9); font-size: 1rem; line-height: 1.55; }
+.fair-whatsapp { display: flex; width: 100%; min-height: 64px; padding: 13px 22px; border-radius: 18px; color: #fff; background: var(--green); box-shadow: 0 16px 36px rgba(9, 48, 45, .28); align-items: center; justify-content: center; gap: 14px; font-size: .95rem; font-weight: 600; letter-spacing: .02em; text-align: left; text-decoration: none; transition: background .2s, box-shadow .2s, transform .2s; }
+.fair-whatsapp-primary { color: var(--green); background: #fff9f1; }
+.fair-whatsapp:hover { background: #15534f; box-shadow: 0 20px 42px rgba(9, 48, 45, .34); transform: translateY(-2px); }
+.fair-whatsapp-primary:hover { color: #fff; }
+.fair-whatsapp svg { width: 24px; height: 24px; flex: 0 0 auto; fill: currentColor; }
+.fair-whatsapp span { display: grid; gap: 2px; }
+.fair-whatsapp small { color: rgba(28, 109, 104, .65); font-size: .72rem; font-weight: 500; }
+.fair-whatsapp-primary:hover small { color: rgba(255, 255, 255, .72); }
+.fair-config-note { margin-top: 12px; color: rgba(255, 249, 241, .7); font-size: .75rem; line-height: 1.45; text-align: center; }
+.fair-intro { max-width: 600px; margin: 0 auto; padding: 34px clamp(24px, 7vw, 56px); color: rgba(28, 109, 104, .78); font: 400 1.22rem/1.45 var(--serif); text-align: center; }
+.fair-quick-info { margin: 0 clamp(20px, 5vw, 40px); overflow: hidden; border-radius: 24px; background: rgba(250, 248, 245, .82); box-shadow: 0 18px 45px rgba(28, 109, 104, .1); }
+.fair-info-row { position: relative; display: grid; min-height: 138px; padding: 26px 24px; grid-template-columns: 44px 1fr auto; align-items: center; gap: 16px; }
+.fair-info-row + .fair-info-row::before { position: absolute; top: 0; right: 24px; left: 84px; height: 1px; background: rgba(28, 109, 104, .11); content: ""; }
+.fair-icon { display: grid; width: 44px; height: 44px; border-radius: 50%; color: var(--gold); background: rgba(183, 145, 66, .12); place-items: center; }
+.fair-icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.fair-info-row small, .fair-section-heading > p, .fair-instagram > div > p, .fair-final-cta > p { display: block; margin: 0 0 6px; color: var(--gold); font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.fair-info-row h2 { margin: 0 0 5px; color: var(--green); font: 500 1.2rem/1.15 var(--serif); }
+.fair-info-row p { margin: 0; color: rgba(28, 109, 104, .67); font-size: 1rem; line-height: 1.5; }
+.fair-pending { padding: 7px 9px; border-radius: 999px; color: rgba(28, 109, 104, .7); background: rgba(28, 109, 104, .08); font-size: .67rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.fair-details { padding: 66px clamp(24px, 7vw, 56px) 58px; }
+.fair-section-heading h2 { max-width: 560px; margin: 0; color: var(--green); font: 400 clamp(2.3rem, 7vw, 3.8rem)/.98 "TT Ramillas", var(--serif); letter-spacing: -.02em; text-wrap: balance; }
+.fair-detail-list { display: grid; margin-top: 38px; gap: 13px; }
+.fair-detail-list article { display: grid; padding: 22px; border-radius: 20px; background: rgba(250, 248, 245, .75); box-shadow: 0 11px 30px rgba(28, 109, 104, .075); }
+.fair-detail-list h3 { margin: 0 0 6px; color: var(--green); font: 500 1.22rem/1.1 var(--serif); }
+.fair-detail-list p { margin: 0; color: rgba(28, 109, 104, .68); font-size: 1rem; line-height: 1.5; }
+.fair-instagram { display: grid; margin: 0 clamp(20px, 5vw, 40px); padding: 30px; border-radius: 26px; color: #fff8ef; background: var(--green); grid-template-columns: 1fr auto; align-items: center; gap: 28px; box-shadow: 0 20px 48px rgba(28, 109, 104, .2); }
+.fair-instagram > div > p { color: var(--gold); }
+.fair-instagram h2 { max-width: 380px; margin: 0; font: 400 clamp(1.75rem, 5vw, 2.5rem)/1.05 var(--serif); }
+.fair-instagram > a { display: flex; min-width: 168px; padding: 15px 17px; border-radius: 16px; color: var(--green); background: #fff8ef; align-items: center; gap: 11px; text-decoration: none; }
+.fair-instagram > a[aria-disabled="true"] { cursor: default; }
+.fair-instagram svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.fair-instagram .fair-icon-fill { fill: currentColor; stroke: none; }
+.fair-instagram a > span { display: grid; gap: 3px; font-size: .82rem; font-weight: 600; }
+.fair-instagram a small { color: rgba(28, 109, 104, .6); font-size: .66rem; font-weight: 500; }
+.fair-final-cta { padding: 68px clamp(24px, 7vw, 56px) 62px; text-align: center; }
+.fair-final-cta h2 { margin: 0 0 24px; color: var(--green); font: 400 clamp(2.5rem, 7vw, 4rem)/.98 "TT Ramillas", var(--serif); }
+.fair-footer { display: grid; padding: 30px 24px 38px; border-top: 1px solid rgba(28, 109, 104, .1); place-items: center; gap: 12px; text-align: center; }
+.fair-footer img { display: block; width: min(270px, 70vw); height: auto; }
+.fair-footer p { margin: 0; color: rgba(28, 109, 104, .55); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+.fair-whatsapp:focus-visible, .fair-header a:focus-visible, .fair-instagram a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+
+@media (max-width: 600px) {
+  .fair-header { min-height: 82px; padding: 18px 20px; }
+  .fair-header a { width: min(245px, 62vw); }
+  .fair-header > span { max-width: 90px; font-size: .64rem; }
+  .fair-hero, .fair-hero-content { min-height: 640px; }
+  .fair-hero > img { object-position: 54% center; }
+  .fair-hero-content { padding: 38px 22px 34px; }
+  .fair-kicker { margin-bottom: 17px; font-size: .67rem; }
+  .fair-hero h1 { font-size: clamp(3.2rem, 14vw, 4.2rem); }
+  .fair-offer { font-size: .96rem; }
+  .fair-intro { font-size: 1.1rem; }
+  .fair-info-row { padding: 24px 20px; grid-template-columns: 42px 1fr; gap: 14px; }
+  .fair-info-row + .fair-info-row::before { right: 20px; left: 76px; }
+  .fair-pending { grid-column: 2; justify-self: start; }
+  .fair-details { padding-top: 56px; }
+  .fair-detail-list article { padding: 20px; }
+  .fair-instagram { padding: 26px 22px; grid-template-columns: 1fr; }
+  .fair-instagram > a { width: 100%; justify-content: center; }
+  .fair-final-cta { padding-top: 58px; }
+}
+
 @media (max-width: 700px) {
   .landing-header { padding: 20px; }
   .landing-tag { width: 100%; text-align: center; }
