@@ -217,13 +217,17 @@ button { cursor: pointer; }
 .fair-header a { display: block; width: min(310px, 58vw); }
 .fair-header img { display: block; width: 100%; height: auto; }
 .fair-header > span { color: rgba(28, 109, 104, .65); font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-align: right; text-transform: uppercase; }
-.fair-hero { position: relative; min-height: 570px; overflow: hidden; color: #fff9f1; isolation: isolate; }
+.fair-hero { position: relative; min-height: 690px; overflow: hidden; color: #fff9f1; isolation: isolate; }
 .fair-hero > img { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
 .fair-hero-overlay { position: absolute; z-index: -2; inset: 0; background: linear-gradient(180deg, rgba(16, 55, 52, .38) 0%, rgba(15, 59, 56, .62) 44%, rgba(10, 46, 43, .96) 100%); }
-.fair-hero-content { display: flex; min-height: 570px; padding: 48px clamp(24px, 7vw, 56px) 44px; justify-content: flex-end; flex-direction: column; }
+.fair-hero-content { display: flex; min-height: 690px; padding: 44px clamp(24px, 7vw, 56px) 40px; justify-content: flex-end; flex-direction: column; }
 .fair-kicker { width: max-content; margin: 0 0 20px; padding: 9px 14px; border-radius: 999px; color: #fff8e9; background: rgba(183, 145, 66, .9); font-size: .75rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
-.fair-hero h1 { max-width: 600px; margin: 0; font: 400 clamp(3rem, 8vw, 4.75rem)/.94 "Collingar", var(--serif); letter-spacing: -.025em; text-wrap: balance; }
-.fair-offer { max-width: 520px; margin: 18px 0 28px; color: rgba(255, 249, 241, .9); font-size: 1rem; line-height: 1.55; }
+.fair-hero h1 { max-width: 600px; margin: 0; font: 400 clamp(5.4rem, 14vw, 8rem)/.78 "Collingar", var(--serif); letter-spacing: -.035em; text-wrap: balance; }
+.fair-promo-title { margin: 20px 0 0; color: #fff9f1; font-size: clamp(1.1rem, 3.2vw, 1.55rem); font-weight: 600; letter-spacing: .08em; line-height: 1.15; text-transform: uppercase; }
+.fair-promo-benefits { display: flex; margin: 18px 0 0; padding: 0; flex-wrap: wrap; gap: 8px; list-style: none; }
+.fair-promo-benefits li { padding: 9px 13px; border: 1px solid rgba(255, 249, 241, .28); border-radius: 999px; color: #fff9f1; background: rgba(12, 55, 51, .58); backdrop-filter: blur(7px); font-size: .85rem; font-weight: 600; }
+.fair-promo-benefits li::before { margin-right: 7px; color: var(--gold); content: "+"; }
+.fair-offer { max-width: 570px; margin: 17px 0 22px; color: rgba(255, 249, 241, .88); font-size: .88rem; line-height: 1.5; }
 .fair-hero-actions { display: grid; width: 100%; gap: 12px; }
 .fair-whatsapp { display: flex; width: 100%; min-height: 62px; padding: 13px 24px; border-radius: 999px; color: #fff; background: var(--green); box-shadow: 0 16px 36px rgba(9, 48, 45, .28); align-items: center; justify-content: center; gap: 14px; font-size: 1rem; font-weight: 600; letter-spacing: .02em; text-align: left; text-decoration: none; transition: background .2s, box-shadow .2s, transform .2s; }
 .fair-whatsapp-primary { color: var(--green); background: #fff9f1; }
@@ -283,12 +287,15 @@ button { cursor: pointer; }
   .fair-header { min-height: 82px; padding: 18px 20px; }
   .fair-header a { width: min(245px, 62vw); }
   .fair-header > span { max-width: 90px; font-size: .64rem; }
-  .fair-hero, .fair-hero-content { min-height: 640px; }
+  .fair-hero, .fair-hero-content { min-height: 770px; }
   .fair-hero > img { object-position: 54% center; }
   .fair-hero-content { padding: 38px 22px 34px; }
   .fair-kicker { margin-bottom: 17px; font-size: .67rem; }
-  .fair-hero h1 { font-size: clamp(3.2rem, 14vw, 4.2rem); }
-  .fair-offer { font-size: .96rem; }
+  .fair-hero h1 { font-size: clamp(5rem, 25vw, 6.4rem); }
+  .fair-promo-title { max-width: 310px; font-size: 1.05rem; }
+  .fair-promo-benefits { align-items: flex-start; flex-direction: column; }
+  .fair-promo-benefits li { font-size: .8rem; }
+  .fair-offer { margin-bottom: 20px; font-size: .82rem; }
   .fair-intro { font-size: 1.1rem; }
   .fair-info-row { padding: 24px 20px; grid-template-columns: 42px 1fr; gap: 14px; }
   .fair-info-row + .fair-info-row::before { right: 20px; left: 76px; }
